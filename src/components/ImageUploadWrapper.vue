@@ -73,7 +73,6 @@ export default defineComponent({
 
       file = files[0]
       if (!['image/gif', 'image/jpeg', 'image/png', 'image/svg+xml', 'image/webp'].includes(file.type)) {
-        console.log('no image')
         context.emit('wrong-format', file.type)
         isLoading.value = false
         return
@@ -82,7 +81,6 @@ export default defineComponent({
 
       // check file max size
       if (size > maxSize) {
-        console.log('file too big')
         context.emit('size-exceeded', size)
         isLoading.value = false
         return
