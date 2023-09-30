@@ -4,7 +4,7 @@ import { Ref, ref, computed } from 'vue'
 
 const defaultMessages: any = [
   {
-    text: '2020 has entered the chat',
+    text: 'You has entered the chat',
     memberId: 0
   },
   {
