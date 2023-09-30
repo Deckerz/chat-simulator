@@ -9,56 +9,11 @@ const defaultMessages: any = [
   },
   {
     text: 'Hello everybody 👋',
-    image: require('@/assets/group.png'),
     memberId: 1
   },
   {
     text: 'Let\'s get t his started',
-    memberId: 1
-  },
-  {
-    text: 'Welcome, 2020!',
     memberId: 2
-  },
-  {
-    text: 'Check this out i\'v got a new virus for you guys',
-    memberId: 1
-  },
-  {
-    text: 'What? It\'s just a common flu',
-    memberId: 2
-  },
-  {
-    text: 'Just wait a little 😉',
-    memberId: 1
-  },
-  {
-    text: '...',
-    memberId: 1
-  },
-  {
-    text: 'Damn, you are right!',
-    memberId: 2
-  },
-  {
-    text: 'Ha ha!',
-    memberId: 1
-  },
-  {
-    text: 'Allright, we\'ll all stay at home now!',
-    memberId: 3
-  },
-  {
-    text: 'Come on, just drink some Disinfectants',
-    memberId: 4
-  },
-  {
-    text: 'Is there still some toilet paper?',
-    memberId: 2
-  },
-  {
-    text: '2020 left the chat',
-    memberId: 0
   }
 ]
 const messagesRef: Ref<Message[]> = ref(defaultMessages.map((message: any, i: number) => {

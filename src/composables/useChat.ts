@@ -2,7 +2,7 @@ import { Chat } from '@/types/chat'
 import { Ref, ref } from 'vue'
 
 const chatSettingsRef: Ref<Chat> = ref({
-  name: 'Year 2020',
+  name: 'Some Chat',
   image: require('@/assets/group.png')
 })
 
