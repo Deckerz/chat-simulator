@@ -80,7 +80,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, SetupContext, ref, Ref } from 'vue'
+import { defineComponent, SetupContext, ref, Ref, computed, ComputedRef } from 'vue'
 import ImageUploadWrapper from '@/components/ImageUploadWrapper.vue'
 import useMembersOverlay from '@/composables/useMembersOverlay'
 import useMessages from '@/composables/useMessages'
@@ -100,7 +100,8 @@ export default defineComponent({
     const openFileUploadRef = ref(false)
     const { createMessage } = useMessages()
     const { membersRef } = useMembers()
-    const memberRef: Ref<Member> = ref(membersRef.value[1])
+    const memberId: Ref<MemberId> = ref(membersRef.value[1].id)
+    const memberRef: ComputedRef<Member> = computed(() => membersRef.value.find((member) => member.id === memberId.value) ?? membersRef.value[1])
     const inputElementRef = ref()
     const textRef = ref('')
     const imageRef = ref('')
@@ -116,11 +117,8 @@ export default defineComponent({
       context.emit('create')
     }
 
-    const handleChooseMember = (memberId: MemberId) => {
-      const member: Member | undefined = membersRef.value.find((member) => member.id === memberId)
-      if (member) {
-        memberRef.value = member
-      }
+    const handleChooseMember = (newMemberId: MemberId) => {
+      memberId.value = newMemberId
     }
 
     const handleInputMemberClick = () => {

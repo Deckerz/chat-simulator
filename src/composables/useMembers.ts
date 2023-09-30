@@ -5,14 +5,12 @@ const defaultMembers: Member[] = [
   {
     id: 0,
     name: 'Admin',
-    color: 'blueGray',
-    image: ''
+    color: 'blueGray'
   },
   {
     id: 1,
-    name: '2020',
-    color: 'gray',
-    image: require('@/assets/2020.png')
+    name: 'You',
+    color: 'gray'
   },
   {
     id: 2,
@@ -21,19 +19,17 @@ const defaultMembers: Member[] = [
   },
   {
     id: 3,
-    name: 'Merkel',
-    color: 'cyan',
-    image: require('@/assets/mutti.png')
+    name: 'Dave',
+    color: 'cyan'
   },
   {
     id: 4,
-    name: 'Trump',
-    color: 'emerald',
-    image: require('@/assets/trump.png')
+    name: 'Greg',
+    color: 'emerald'
   },
   {
     id: 5,
-    name: 'Telekom/SAP',
+    name: 'Amber',
     color: 'amber'
   }
 ]

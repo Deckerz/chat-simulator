@@ -76,7 +76,7 @@
               ]"
               role="textbox"
               :contenteditable="!chooseCallbackRef"
-              @blur="handleNameInput($event)"
+              @input="debounce(() => handleNameInput($event), 250)"
             >
               {{ member.name }}
             </span>
@@ -202,6 +202,16 @@ export default defineComponent({
     const memberRef: ComputedRef<Member> = computed(() => props.member)
     const maxLength = 25
 
+    const createDebounce = () => {
+      let timeout: any = null
+      return function(fnc: any, delayMs: number) {
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
+          fnc()
+        }, delayMs || 500)
+      }
+    }
+
     onMounted(() => {
       setTimeout(() => {
         isVisibleRef.value = true
@@ -295,7 +305,8 @@ export default defineComponent({
       colorHoverRef,
       memberColorRef,
       handleColorClick,
-      isMarkedForRemove
+      isMarkedForRemove,
+      debounce: createDebounce()
     }
   }
 })
